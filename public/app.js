@@ -59,7 +59,7 @@ async function reviewCode() {
   output.classList.add('hidden');
 
   try {
-    const res = await fetch('https://code-review-app-zyt7.onrender.com', {
+    const res = await fetch('https://code-review-app-zyt7.onrender.com/review', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ code, language, level })

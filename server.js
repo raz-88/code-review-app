@@ -7,10 +7,9 @@ const app = express();
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 app.use(cors({
-  origin: [
-    'http://localhost:3000',
-    'https://code-review-app-self.vercel.app/'
-  ]
+  origin: 'https://code-review-app-self.vercel.app',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type']
 }));
 app.use(express.json());
 app.use(express.static('public'));
