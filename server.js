@@ -6,7 +6,12 @@ require('dotenv').config();
 const app = express();
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://code-review-app-self.vercel.app/'
+  ]
+}));
 app.use(express.json());
 app.use(express.static('public'));
 
